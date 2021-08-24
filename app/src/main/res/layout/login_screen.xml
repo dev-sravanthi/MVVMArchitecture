@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:bind="http://schemas.android.com/tools">
+
+<data>
+    <variable
+        name="viewModel"
+        type="com.sravs.mvvmarchitecture.viewmodel.LoginViewModel" />
+</data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/ed_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@={viewModel.userEmail}"/>
+
+    <EditText
+        android:id="@+id/ed_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@={viewModel.userPassword}"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->viewModel.onLoginClicked()}"
+        android:text="login"
+        bind:toastMessage="@{viewModel.toastMessage}"/>
+
+</LinearLayout>
+
+</layout>

@@ -1,4 +1,4 @@
-package com.sravs.mvvmarchitecture;
+package com.sravs.mvvmarchitecture.Model;
 
 public class User {
     private String email,password;
